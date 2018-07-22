@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\xunit.core.2.4.0\build\xunit.core.props" Condition="Exists('..\packages\xunit.core.2.4.0\build\xunit.core.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38DB3B15-DCE7-4730-96DC-1926CD57A84F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JsonLdLibTest</RootNamespace>
+    <AssemblyName>JsonLdLibTest</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.abstractions.2.0.2\lib\net35\xunit.abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.assert, Version=2.4.0.4049, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.assert.2.4.0\lib\netstandard2.0\xunit.assert.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.core, Version=2.4.0.4049, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.extensibility.core.2.4.0\lib\net452\xunit.core.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.execution.desktop, Version=2.4.0.4049, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.extensibility.execution.2.4.0\lib\net452\xunit.execution.desktop.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConformanceTests.cs" />
+    <Compile Include="NQuadsParserTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="W3C\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NQuads\comment_following_triple.nq" />
+    <None Include="NQuads\langtagged_string.nq" />
+    <None Include="NQuads\lantag_with_subtag.nq" />
+    <None Include="NQuads\literal.nq" />
+    <None Include="NQuads\literal_all_controls.nq" />
+    <None Include="NQuads\literal_all_punctuation.nq" />
+    <None Include="NQuads\literal_ascii_boundaries.nq" />
+    <None Include="NQuads\literal_false.nq" />
+    <None Include="NQuads\literal_true.nq" />
+    <None Include="NQuads\literal_with_2_dquotes.nq" />
+    <None Include="NQuads\literal_with_2_squotes.nq" />
+    <None Include="NQuads\literal_with_BACKSPACE.nq" />
+    <None Include="NQuads\literal_with_CARRIAGE_RETURN.nq" />
+    <None Include="NQuads\literal_with_CHARACTER_TABULATION.nq" />
+    <None Include="NQuads\literal_with_dquote.nq" />
+    <None Include="NQuads\literal_with_FORM_FEED.nq" />
+    <None Include="NQuads\literal_with_LINE_FEED.nq" />
+    <None Include="NQuads\literal_with_numeric_escape4.nq" />
+    <None Include="NQuads\literal_with_numeric_escape8.nq" />
+    <None Include="NQuads\literal_with_REVERSE_SOLIDUS.nq" />
+    <None Include="NQuads\literal_with_REVERSE_SOLIDUS2.nq" />
+    <None Include="NQuads\literal_with_squote.nq" />
+    <None Include="NQuads\literal_with_UTF8_boundaries.nq" />
+    <None Include="NQuads\manifest.ttl" />
+    <None Include="NQuads\minimal_whitespace.nq" />
+    <None Include="NQuads\nq-syntax-bad-literal-01.nq" />
+    <None Include="NQuads\nq-syntax-bad-literal-02.nq" />
+    <None Include="NQuads\nq-syntax-bad-literal-03.nq" />
+    <None Include="NQuads\nq-syntax-bad-quint-01.nq" />
+    <None Include="NQuads\nq-syntax-bad-uri-01.nq" />
+    <None Include="NQuads\nq-syntax-bnode-01.nq" />
+    <None Include="NQuads\nq-syntax-bnode-02.nq" />
+    <None Include="NQuads\nq-syntax-bnode-03.nq" />
+    <None Include="NQuads\nq-syntax-bnode-04.nq" />
+    <None Include="NQuads\nq-syntax-bnode-05.nq" />
+    <None Include="NQuads\nq-syntax-bnode-06.nq" />
+    <None Include="NQuads\nq-syntax-uri-01.nq" />
+    <None Include="NQuads\nq-syntax-uri-02.nq" />
+    <None Include="NQuads\nq-syntax-uri-03.nq" />
+    <None Include="NQuads\nq-syntax-uri-04.nq" />
+    <None Include="NQuads\nq-syntax-uri-05.nq" />
+    <None Include="NQuads\nq-syntax-uri-06.nq" />
+    <None Include="NQuads\nt-syntax-bad-base-01.nq" />
+    <None Include="NQuads\nt-syntax-bad-esc-01.nq" />
+    <None Include="NQuads\nt-syntax-bad-esc-02.nq" />
+    <None Include="NQuads\nt-syntax-bad-esc-03.nq" />
+    <None Include="NQuads\nt-syntax-bad-lang-01.nq" />
+    <None Include="NQuads\nt-syntax-bad-num-01.nq" />
+    <None Include="NQuads\nt-syntax-bad-num-02.nq" />
+    <None Include="NQuads\nt-syntax-bad-num-03.nq" />
+    <None Include="NQuads\nt-syntax-bad-prefix-01.nq" />
+    <None Include="NQuads\nt-syntax-bad-string-01.nq" />
+    <None Include="NQuads\nt-syntax-bad-string-02.nq" />
+    <None Include="NQuads\nt-syntax-bad-string-03.nq" />
+    <None Include="NQuads\nt-syntax-bad-string-04.nq" />
+    <None Include="NQuads\nt-syntax-bad-string-05.nq" />
+    <None Include="NQuads\nt-syntax-bad-string-06.nq" />
+    <None Include="NQuads\nt-syntax-bad-string-07.nq" />
+    <None Include="NQuads\nt-syntax-bad-struct-01.nq" />
+    <None Include="NQuads\nt-syntax-bad-struct-02.nq" />
+    <None Include="NQuads\nt-syntax-bad-uri-01.nq" />
+    <None Include="NQuads\nt-syntax-bad-uri-02.nq" />
+    <None Include="NQuads\nt-syntax-bad-uri-03.nq" />
+    <None Include="NQuads\nt-syntax-bad-uri-04.nq" />
+    <None Include="NQuads\nt-syntax-bad-uri-05.nq" />
+    <None Include="NQuads\nt-syntax-bad-uri-06.nq" />
+    <None Include="NQuads\nt-syntax-bad-uri-07.nq" />
+    <None Include="NQuads\nt-syntax-bad-uri-08.nq" />
+    <None Include="NQuads\nt-syntax-bad-uri-09.nq" />
+    <None Include="NQuads\nt-syntax-bnode-01.nq" />
+    <None Include="NQuads\nt-syntax-bnode-02.nq" />
+    <None Include="NQuads\nt-syntax-bnode-03.nq" />
+    <None Include="NQuads\nt-syntax-datatypes-01.nq" />
+    <None Include="NQuads\nt-syntax-datatypes-02.nq" />
+    <None Include="NQuads\nt-syntax-file-01.nq" />
+    <None Include="NQuads\nt-syntax-file-02.nq" />
+    <None Include="NQuads\nt-syntax-file-03.nq" />
+    <None Include="NQuads\nt-syntax-str-esc-01.nq" />
+    <None Include="NQuads\nt-syntax-str-esc-02.nq" />
+    <None Include="NQuads\nt-syntax-str-esc-03.nq" />
+    <None Include="NQuads\nt-syntax-string-01.nq" />
+    <None Include="NQuads\nt-syntax-string-02.nq" />
+    <None Include="NQuads\nt-syntax-string-03.nq" />
+    <None Include="NQuads\nt-syntax-subm-01.nq" />
+    <None Include="NQuads\nt-syntax-uri-01.nq" />
+    <None Include="NQuads\nt-syntax-uri-02.nq" />
+    <None Include="NQuads\nt-syntax-uri-03.nq" />
+    <None Include="NQuads\nt-syntax-uri-04.nq" />
+    <None Include="NQuads\rdf11blanknodes.nq" />
+    <None Include="NQuads\README" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JsonLdLib\JsonLdLib.csproj">
+      <Project>{f798a318-a01b-4dd6-b21a-ed221eb09354}</Project>
+      <Name>JsonLdLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\xunit.core.2.4.0\build\xunit.core.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.core.2.4.0\build\xunit.core.props'))" />
+    <Error Condition="!Exists('..\packages\xunit.core.2.4.0\build\xunit.core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.core.2.4.0\build\xunit.core.targets'))" />
+  </Target>
+  <Import Project="..\packages\xunit.core.2.4.0\build\xunit.core.targets" Condition="Exists('..\packages\xunit.core.2.4.0\build\xunit.core.targets')" />
+</Project>
