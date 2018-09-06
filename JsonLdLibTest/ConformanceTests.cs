@@ -235,6 +235,7 @@ namespace JsonLD.Test
                 using (TextReader reader = new StreamReader(manifestStream))
                 using (JsonReader jreader = new Newtonsoft.Json.JsonTextReader(reader)
                 {
+                    //Date formatted strings are not parsed to a date type and are read as strings.
                     DateParseHandling = DateParseHandling.None
                 })
                 {
