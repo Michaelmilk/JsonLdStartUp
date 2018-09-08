@@ -51,18 +51,18 @@ namespace JsonLD.Test
     public class ConformanceCases: IEnumerable<object[]>
     {
         string[] manifests = new[] {
-            "compact-manifest.jsonld",
-            "expand-manifest.jsonld",
-            "flatten-manifest.jsonld",
-            "frame-manifest.jsonld",
+            //"compact-manifest.jsonld",
+            //"expand-manifest.jsonld",
+            //"flatten-manifest.jsonld",
+            //"frame-manifest.jsonld",
             "toRdf-manifest.jsonld",
-            "fromRdf-manifest.jsonld",
-            "normalize-manifest.jsonld",
-// Test tests are not supported on CORE CLR
-#if !PORTABLE && !IS_CORECLR
-            "error-manifest.jsonld",
-            "remote-doc-manifest.jsonld",
-#endif
+//            "fromRdf-manifest.jsonld",
+//            "normalize-manifest.jsonld",
+//// Test tests are not supported on CORE CLR
+//#if !PORTABLE && !IS_CORECLR
+//            "error-manifest.jsonld",
+//            "remote-doc-manifest.jsonld",
+//#endif
         };
 
         public ConformanceCases()
