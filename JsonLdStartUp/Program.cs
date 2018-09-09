@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using JsonLD.Core;
 using JsonLD.Util;
 using Newtonsoft.Json;
@@ -17,12 +12,15 @@ namespace JsonLdStartUp
         static void Main(string[] args)
         {
             var input = GetJson("TestCases\\event-input.jsonld");
-            var expected = File.ReadAllText("TestCases\\event-output.nq");
+            var expected = File.ReadAllText("TestCases\\event-output.nq").Replace("\\", "");
 
             var options = new JsonLdOptions("http://json-ld.org/test-suite/tests/startup");
             options.format = "application/nquads";
-            var result = new JValue((string)JsonLdProcessor.ToRDF(input, options));
-            Console.Write(JSONUtils.ToPrettyString(result));
+            var result = new JValue(((string)JsonLdProcessor.ToRDF(input, options)).Replace("\n", "\r\n"));
+            Console.WriteLine(JSONUtils.ToPrettyString(result));
+            Console.WriteLine(JSONUtils.ToPrettyString(result) == JSONUtils.ToPrettyString(expected));
+            bool isSame = JsonLdUtils.DeepCompare(result, expected);
+            Console.WriteLine(JsonLdUtils.DeepCompare(result, expected));
         }
 
          static JToken GetJson(JToken j)
